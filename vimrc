@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'wincent/command-t'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -30,10 +31,16 @@ filetype plugin indent on    " required
 syntax enable
 
 set mouse=a
+:let mapleader = ","
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
-map <C-a> <esc>ggVG<CR>
+map  <C-a> <esc>ggVG<CR>
+map  <leader>, :CommandT
+
+" Prevent Yank Cut
+nnoremap d "_d
+vnoremap d "_d
 
 " Start NERDTree
 autocmd VimEnter * NERDTree
@@ -49,7 +56,8 @@ Plugin 'mxw/vim-jsx'
 
 set tabstop=2
 set ruler
-:set number
+set number
+set modifiable
 
 " yank to clipboard
 if has("clipboard")
