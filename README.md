@@ -1,2 +1,1 @@
-# programming-exercises
 # bash-profile
